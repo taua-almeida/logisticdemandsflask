@@ -1,0 +1,110 @@
+<!--
+=========================================================
+* Argon Dashboard - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+
+
+* Copyright  Creative Tim (http://www.creative-tim.com)
+* Coded by www.creative-tim.com
+
+
+
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="pt-br, en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pt-br, en">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Personal project for studying logistics for university class and train python">
+    <meta name="author" content="Tauã Gomes de Almeida">
+    <title>LogisticsDemand</title>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
+    <!-- Argon CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'assets/css/argon.css')}}" type="text/css">
+</head>
+<body>
+  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+      <div class="scrollbar-inner">
+          <div class="sidenav-header  align-items-center">
+              <a class="navbar-brand" href="javascript:void(0)">
+                  <img src="{{url_for('static', filename = 'assets/img/brand/blue.png')}}" class="navbar-brand-img" alt="...">
+              </a>
+          </div>
+          <div class="navbar-inner">
+              <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+                  {% block sidepanelcontent %}
+
+                  {% endblock %}
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <div class="main-content" id="panel">
+      <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+          <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav align-items-center  ml-md-auto ">
+                      <li class="nav-item d-xl-none">
+                      <!-- Sidenav toggler -->
+                          <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                              <div class="sidenav-toggler-inner">
+                                  <i class="sidenav-toggler-line"></i>
+                                  <i class="sidenav-toggler-line"></i>
+                                  <i class="sidenav-toggler-line"></i>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="nav-item d-sm-none">
+                          <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
+                              <i class="ni ni-zoom-split-in"></i>
+                          </a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <div class="media align-items-center">
+                                  <span class="avatar avatar-sm rounded-circle">
+                                      <img alt="Image placeholder" src="{{url_for('static', filename = 'assets/img/theme/team-4.jpg')}}">
+                                  </span>
+                                  <div class="media-body  ml-2  d-none d-lg-block">
+                                      <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      {% block content %}
+
+      {% endblock %}
+  </div>
+
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="{{url_for('static', filename = 'assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/js-cookie/js.cookie.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
+  <!-- Optional JS -->
+  <script src="{{url_for('static', filename = 'assets/vendor/chart.js/dist/Chart.min.js')}}"></script>
+  <script src="{{url_for('static', filename = 'assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
+  <!-- Argon JS -->
+  <script src="{{url_for('static', filename = 'assets/js/argon.js')}}"></script>
+  {% block jscontent %}
+
+  {% endblock %}
+</body>
+</html>

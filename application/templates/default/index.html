@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block sidepanelcontent %}
+ <ul class="navbar-nav">
+     <li class="nav-item">
+         <a class="nav-link" href="">
+             <i class="ni ni-istanbul text-primary"></i>
+             <span class="nav-link-text">Home</span>
+         </a>
+     </li>
+ </ul>
+{% endblock %}
+{% block content %}
+<div class="header bg-primary pb-6 pt-1">
+    <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+            <div class="col-lg-7 col-md-10">
+                <h1 class="display-2 text-white">Hello!</h1>
+                <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-xl-6 order-xl-1">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h3 class="mb-0">SMA / MMS </h3>
+                            <h5>simple moving average / média móvel simples</h5>
+                        </div>
+                        <div class="col-4 text-right">
+                            <a href="#!" target="_blank" class="btn btn-sm btn-primary">Concept / Conceito</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="card-body">
+                     <form method="POST" action="/">
+                         <h6 class="heading-small text-muted mb-4">Fill the forms below</h6>
+                         {{ sma_form.csrf_token }}
+                         <div class="pl-lg-4">
+                             <div class="row">
+                                 <div class="col-lg-8">
+                                     <div class="form-group">
+                                         <label class="form-control-label" for="base" data-toggle="tooltip" data-placement="top" title data-original-title="Base de avaliação">Base of Evaluation</label>
+                                         {{ sma_form.base(class='form-control form-control-alternative', placeholder='Base: Ex. 1 or 2 or 3 ...') }}
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="row" id="pm">
+                                 <div class="col-lg-6">
+                                     <div class="form-group">
+                                         <label class="form-control-label" for="period[]" data-toggle="tooltip" data-placement="top" title data-original-title="Valor do perído">Period value</label>
+                                         {{ sma_form.period(class='form-control form-control-alternative', placeholder='Period: Ex. 1 or 2 or 3 ...') }}
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="form-group">
+                                         <label class="form-control-label" for="demand[]" data-toggle="tooltip" data-placement="top" title data-original-title="Demanda do period">Demand of period</label>
+                                         {{ sma_form.demand(class='form-control form-control-alternative', placeholder='Demand: Ex. 100 or 200 or 3 ...') }}
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-lg-12">
+                                     <div class="form-group">
+                                         <button type="button" class="btn btn-primary btn-block" id="addpm">
+                                             <span class="btn-inner--icon">
+                                                 <i class="ni ni-fat-add"></i>
+                                             </span>
+                                             <span class="btn-inner--text">Add more (Period / Demand)</span>
+                                         </button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+
+                     </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block jscontent %}
+    <script src="{{url_for('static', filename = 'js/default/main.js')}}"></script>
+{% endblock %}
